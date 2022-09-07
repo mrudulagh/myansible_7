@@ -11,8 +11,8 @@
 
   - name: i want to start apache2  webserver 
     service: 
-      name: apache2
-      state: "{{mywebpackonubuntu}}"
+      name: "{{mywebpackonubuntu}}"
+      state: started
     when: ansible_os_family=="Debian" 
 
 
