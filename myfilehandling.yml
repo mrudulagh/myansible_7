@@ -2,7 +2,16 @@
 - hosts: 172.31.30.183
   become: yes
   tasks:
-  - name: create a file
-    file: 
-      path: /home/ubuntu/13thsepfile
-      state: touch
+  - include_tasks: myfile.yml
+  - name: create a folder
+    file:
+      path: /home/ubuntu/my13thsepfolder
+      state: directory
+  - name: copy file from master to node side
+    copy:
+      src: my2ndfile.txt
+      dest: /home/ubuntu/my2ndfile
+  - name: install apache2
+    apt:
+      name: apache2
+      state: present
