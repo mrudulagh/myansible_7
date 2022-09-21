@@ -11,7 +11,7 @@
 - name: copy host context file into node side
   template: 
     src: templates/mytomhostcontext.j2
-    dest: nano /opt/tomcat/webapps/host-manager/META-INF/context.xml
+    dest: /opt/tomcat/webapps/host-manager/META-INF/context.xml
 - name: copy tomcat service file into node side
   template: 
     src: templates/mytomservice.j2
